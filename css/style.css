@@ -4,31 +4,63 @@
   box-sizing: border-box;
 }
 
-a{
+a {
   text-decoration: none;
   color: #fff;
 }
 
-html, body {
+html,
+body {
   font-family: "Roboto", sans-serif;
-  min-height: 100vh;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .banner {
-  position: relative;
-  width: 100%;
-  height: 35vh;
-  background-image: url("../img/banner.jpg");
-  background-position: center;
+  height: 100vh;
+  background: linear-gradient( rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0) ), url("../img/banner.jpg");
   background-size: cover;
-  background-position-y: 42%;
-  margin-bottom: 120px;
+  background-position: center;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.navbar{
+.banner-wrapper h1{
+  color: #e2f2ba;
+  margin-bottom: 10px;
+}
+
+.banner-wrapper a {
+  cursor: pointer;
+  border: 1px solid #ad3c33;
+  background-color: transparent;
+  height: 50px;
+  width: 200px;
+  color: #ad3c33;
+  padding: 0.5rem;
+  font-size: 1.5em;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+}
+
+.banner-wrapper a:hover {
+  transition: 1s;
+  cursor: pointer;
+  background-color: #ad3c33;
   color: #fff;
-  padding: 10px;
-  background-color: #223f42;
+}
+
+.navbar {
+  color: #fff;
+  padding: 10px 50px;
+  /* background-color: #223f42; */
+  background-color: #ad3c33;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,31 +72,90 @@ html, body {
   gap: 20px;
 }
 
-main{
-  text-align: center;
+.content-wrapper{
+  padding: 0 15%;
 }
 
 .main-content {
-  padding: 0 20%;
   text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
 
-.profile-description{
-  margin-top: 20px;
+.profile-details {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 50px;  
+}
+
+.ability-content ul {
+  text-align: left;
+}
+
+.profile-description {
+  margin-top: 10px;
   text-align: justify;
 }
 
-.motto-content{
+
+.motto-content {
   margin: 50px 0;
 }
 
-img.photo-profile{
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  /* margin: -50px 0 0 -50px; */
-  width: 250px;
+.lesson-learned-section{
+  display: grid;
+  align-content: center;
+  text-align: justify;
+  justify-content: center;
+  height: 100vh;
+  grid-template-columns: 50% 50%;
+  gap: 50px;
+}
+
+.lesson-learned-section div h2{
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.my-gallery-section {
+  height: 100vh;
+  text-align: center;
+}
+
+.my-gallery-section > div{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.gallery{
+  float: right;
+  margin: 5px;
+  border: 2px solid black;
+}
+
+.gallery img{
+  height: 200px;
+}
+
+.gallery div {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.video-perkenalan-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+img.photo-profile {
+  width: 20em;
   border-radius: 50%;
   border: 8px solid rgb(255, 255, 255);
 }
@@ -76,5 +167,5 @@ footer {
   text-align: center;
   background-color: #242424;
   color: #fff;
-  padding: 10px;
+  padding: 10px 0px;
 }
