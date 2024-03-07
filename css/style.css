@@ -25,7 +25,6 @@ body {
   background: linear-gradient( rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0) ), url("../img/banner.jpg");
   background-size: cover;
   background-position: center;
-  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,18 +33,17 @@ body {
 
 .banner-wrapper h1{
   color: #e2f2ba;
-  margin-bottom: 10px;
+  font-size: 5vw;
+  margin-bottom: 20px;
 }
 
 .banner-wrapper a {
   cursor: pointer;
   border: 1px solid #ad3c33;
   background-color: transparent;
-  height: 50px;
-  width: 200px;
   color: #ad3c33;
-  padding: 0.5rem;
-  font-size: 1.5em;
+  padding: 10px;
+  font-size: 4vw;
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
 }
 
@@ -66,30 +64,140 @@ body {
   align-items: center;
 }
 
-.links-container {
+/* START RESPONSIVE NAVLINK */
+
+.menu {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@media (max-width: 700px) {
+  .menu-button-container {
+    display: flex;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu li {
+    border: 1px solid #333;
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: #222;
+  }
+  .menu > li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+}
+
+/* END RESPONSIVE NAVLINK */
+
 .content-wrapper{
-  padding: 0 15%;
+  padding: 0 7.5rem;
 }
 
 .main-content {
+  margin-top: 20px;
   text-align: center;
-  height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
+  margin-bottom: 40px;
 }
+
 
 .profile-details {
   display: flex;
   justify-content: center;
   align-items: baseline;
   gap: 50px;  
+}
+
+img.photo-profile {
+  width: 20rem;
+  border-radius: 50%;
+  border: 8px solid rgb(255, 255, 255);
 }
 
 .ability-content ul {
@@ -107,13 +215,12 @@ body {
 }
 
 .lesson-learned-section{
-  display: grid;
+  display: flex;
   align-content: center;
   text-align: justify;
   justify-content: center;
-  height: 50vh;
-  grid-template-columns: 50% 50%;
   gap: 50px;
+  margin-bottom: 40px;
 }
 
 .lesson-learned-section div h2{
@@ -122,8 +229,8 @@ body {
 }
 
 .my-gallery-section {
-  height: 50vh;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .my-gallery-section > div{
@@ -139,7 +246,7 @@ body {
 }
 
 .gallery img{
-  max-height: 200px;
+  width: 100%;
 }
 
 .gallery div {
@@ -148,7 +255,7 @@ body {
 }
 
 .gallery a img{
-  max-height: 200px;
+  width: 100%;
 }
 
 .gallery a div {
@@ -161,18 +268,25 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 50vh;
+  margin-bottom: 20px;
+}
+
+.video-perkenalan-section > iframe {
+  width: 80%;
 }
 
 .map-section{
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 60vh;
+  margin-bottom: 20px;
+}
+
+.map-section > iframe {
+  width: 80%;
 }
 
 .contacts-section{
-  height: 60vh;
   text-align: center;
 }
 
@@ -182,10 +296,39 @@ body {
   gap: 10px;
 }
 
-img.photo-profile {
-  width: 20em;
-  border-radius: 50%;
-  border: 8px solid rgb(255, 255, 255);
+@media screen and (max-width: 810px) {
+  .content-wrapper{
+    padding: 0 50px;
+  }
+
+  .main-content{
+    height: auto;
+    flex-direction: column;
+  }
+  
+  .profile-details{
+    gap: 0px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lesson-learned-section{
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .my-gallery-section > div{
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 10px;
+  }
+  
+  .contacts-section > div{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 40%;
+    gap: 10px;
+  }
 }
 
 footer {
