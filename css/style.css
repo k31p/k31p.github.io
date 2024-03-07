@@ -33,7 +33,7 @@ body {
 
 .banner-wrapper h1{
   color: #e2f2ba;
-  font-size: 5vw;
+  font-size: 2em;
   margin-bottom: 20px;
 }
 
@@ -43,7 +43,7 @@ body {
   background-color: transparent;
   color: #ad3c33;
   padding: 10px;
-  font-size: 4vw;
+  font-size: 1.7em;
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
 }
 
@@ -273,6 +273,7 @@ img.photo-profile {
 
 .video-perkenalan-section > iframe {
   width: 80%;
+  height: 50vh;
 }
 
 .map-section{
@@ -292,11 +293,12 @@ img.photo-profile {
 
 .contacts-section > div{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 20% 20% 20% 20%;
+  justify-content: center;
   gap: 10px;
 }
 
-@media screen and (max-width: 810px) {
+@media screen and (max-width: 1100px) {
   .content-wrapper{
     padding: 0 50px;
   }
@@ -326,7 +328,7 @@ img.photo-profile {
   .contacts-section > div{
     display: grid;
     justify-content: center;
-    grid-template-columns: 40%;
+    grid-template-columns: 25% 25%;
     gap: 10px;
   }
 }
